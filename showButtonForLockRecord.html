@@ -1,0 +1,27 @@
+<template>
+        <lightning-card  variant="Narrow">
+            <div class="slds-m-horizontal_medium slds-m-bottom_medium">
+                <span if:true={showBadge} class={badgeColor}>Record is {isLocked}</span>
+            </div>
+            <template if:true={idAdmin}>
+                <template lwc:if={isLockButton}>
+                <lightning-button variant="destructive" 
+                                    label="Lock Record"
+                                    icon-name="utility:lock"
+                                    title="Lock Record" 
+                                    onclick={handleLockButtonClick} 
+                                    class="slds-align_absolute-center slds-m-left_x-small">
+                </lightning-button>
+                </template>
+                <template lwc:else>
+                <lightning-button variant="success" 
+                                    label="Unlock Record" 
+                                    title="Unlock Record"
+                                    icon-name="utility:unlock"
+                                    onclick={handleUnlockButtonClick} 
+                                    class="slds-align_absolute-center slds-m-left_x-small">
+                </lightning-button>
+                </template>
+            </template>
+        </lightning-card>
+</template>
